@@ -1,17 +1,9 @@
+require("dotenv").config();
 const express = require("express");
+const configureApp = require("./config/app");
 
-const app = express();
+const app = configureApp(express());
 
-app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.json({
-        "name": "API Movies",
-        "description": "Example CRUD API Movies",
-        "version": "V1"
-    });
-});
-
-app.listen(3000, () => {
-    console.log("Server listening on 3000");
+app.listen(app.get("port"), () => {
+    console.log(`Server listening on ${app.get("port")}`);
 });
