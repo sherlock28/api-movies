@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS "schemamovies".movies (
    "created_at" timestamp WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS "schemamovies".gender (
-   "idGender" SERIAL PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS "schemamovies".genders (
+   "idGenders" SERIAL PRIMARY KEY,
    "name" VARCHAR(30) NOT NULL,
    "image" VARCHAR(500),
    "created_at" timestamp WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
@@ -52,3 +52,16 @@ CREATE TABLE IF NOT EXISTS "schemamovies".characters_movies (
 	  REFERENCES "schemamovies".movies("idMovies")
 );
 
+CREATE TABLE IF NOT EXISTS "schemamovies".movies_genders (
+	"idMovies_genders" SERIAL PRIMARY KEY,
+	"movies_idMovies" bigint,
+	"genders_idGenders" bigint,
+
+	CONSTRAINT fk_movies_idMovies
+      FOREIGN KEY("movies_idMovies")
+	  REFERENCES "schemamovies".movies("idMovies"),
+
+	CONSTRAINT fk_genders_idGenders
+      FOREIGN KEY("genders_idGenders")
+	  REFERENCES "schemamovies".genders("idGenders")
+);
