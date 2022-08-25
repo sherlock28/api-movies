@@ -29,13 +29,12 @@ CREATE TABLE IF NOT EXISTS "schemamovies".genders (
 
 CREATE TABLE IF NOT EXISTS "schemamovies".users (
 	"idUsers" SERIAL PRIMARY KEY,
-	"username" VARCHAR(50) NOT NULL,
+	"username" VARCHAR(50) NOT NULL UNIQUE,
 	"password" VARCHAR(500) NOT NULL,
-	"email" VARCHAR(100) NOT NULL,
+	"email" VARCHAR(100) NOT NULL UNIQUE,
 	"token" VARCHAR(500),
 	"deleted" BOOLEAN DEFAULT FALSE,
-	"created_at" timestamp WITH TIME ZONE DEFAULT
-	CURRENT_TIMESTAMP
+	"created_at" timestamp WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS "schemamovies".characters_movies (
