@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/sherlock28/api-movies#readme",
   "dependencies": {
+    "bcryptjs": "2.4.3",
     "dotenv": "16.0.1",
     "express": "^4.18.1",
     "pg": "8.7.3"
