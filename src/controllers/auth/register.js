@@ -25,7 +25,7 @@ const register = async (req, res) => {
 			data: null,
 			success: false,
 			message: "something went wrong",
-			error: err
+			error: err.detail
 		});
 	} finally {
 		disconnect(pool);
