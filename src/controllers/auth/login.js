@@ -31,7 +31,7 @@ const login = async (req, res) => {
 		return res.status(HttpStatusCode.OK).json(makeResponse(token, true, 'user logged successfully.', null));
 
 	} catch (err) {
-		console.error(err);
+		console.error(err.detail);
 		return res.status(HttpStatusCode.BAD_REQUEST).json(makeResponse(null, false, 'something went wrong.', err.detail));
 	} finally {
 		disconnect(pool);
