@@ -1,5 +1,5 @@
 const express = require("express");
-const userRoutes = require("../routes/user.routes");
+const { userRoutes, characterRoutes, movieRoutes } = require("../routes");
 
 function configureApp(app) {
 
@@ -16,6 +16,8 @@ function configureApp(app) {
 	});
 
 	app.use("/api", userRoutes);
+	app.use("/api", characterRoutes);
+	app.use("/api", movieRoutes);
 
 	return app;
 }
