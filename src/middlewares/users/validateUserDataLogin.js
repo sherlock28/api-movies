@@ -1,5 +1,5 @@
-const { makeResponse } = require('../utils/makeResponse');
-const { HttpStatusCode } = require('../const/statusCodes');
+const { makeResponse } = require('../../utils/makeResponse');
+const { HttpStatusCode } = require('../../const/statusCodes');
 
 function validateUserDataLogin(req, res, next) {
 

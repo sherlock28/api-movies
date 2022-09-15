@@ -1,5 +1,5 @@
-const { makeResponse } = require('../utils/makeResponse');
-const { HttpStatusCode } = require('../const/statusCodes');
+const { makeResponse } = require('../../utils/makeResponse');
+const { HttpStatusCode } = require('../../const/statusCodes');
 
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
 
