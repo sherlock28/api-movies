@@ -30,6 +30,7 @@
     "pg": "8.7.3"
   },
   "devDependencies": {
+    "morgan": "1.10.0",
     "nodemon": "^2.0.19"
   }
 }

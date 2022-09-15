@@ -7,6 +7,11 @@ function configureApp(app) {
 
 	app.use(express.json());
 
+	if(process.env.NODE_ENV === 'development') {
+		const morgan = require("morgan");
+		app.use(morgan('dev'));
+	}
+
 	app.get("/", (req, res) => {
 		res.json({
 			"name": "API Movies",
